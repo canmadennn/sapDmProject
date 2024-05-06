@@ -1,0 +1,21 @@
+{
+  "welcomeFile": "/podplugins/index.html",
+  "authenticationMethod": "none",
+  "logout": {
+    "logoutEndpoint": "/do/logout"
+  },
+  "routes": [
+    {
+      "source": "^/podplugins/(.*)$",
+      "target": "$1",
+      "localDir": "webapp"
+    },
+    {
+      "source": "^/test/(.*)$",
+      "target": "$1",
+      "destination": "test",
+      "csrfProtection": false,
+      "authenticationType": "xsuaa"
+    }
+  ]
+}
