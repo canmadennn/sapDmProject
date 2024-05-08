@@ -33,6 +33,9 @@ jobs:
      
     - name: cd
       run: cd ViewPodPlugin
+
+    - name: Tests
+      run: cf login -a https://api.cf.us10-001.hana.ondemand.com -u mevlutcan.maden@solviads.com -p M.maden37
     
     - name: Run Start Script
       run: cf push
