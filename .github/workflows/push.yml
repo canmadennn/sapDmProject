@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - main
+  workflow_dispatch: 
 
 jobs:
   deploy:
@@ -15,7 +16,7 @@ jobs:
 
     - name: Login to Cloud Foundry
       run: |
-        cf login -a $CF_API -u $CF_USERNAME -p $CF_PASSWORD -o $CF_ORGANIZATION -s $CF_SPACE
+        cf login -a https://api.cf.us10-001.hana.ondemand.com -u mevlutcan.maden@solviads.com -p M.maden37
 
     - name: Push application to Cloud Foundry
       run: cf push
