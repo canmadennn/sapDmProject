@@ -7,7 +7,7 @@
     "npm": "10.2.5"
   },
   "scripts": {
-    "start": "cf8.exe login -a https://api.cf.us10-001.hana.ondemand.com -u mevlutcan.maden@solviads.com -p M.maden37 & cf8.exe push"
+    "start": "cf login -a https://api.cf.us10-001.hana.ondemand.com -u mevlutcan.maden@solviads.com -p M.maden37 & cf push"
   },
   "keywords": [],
   "author": "",
