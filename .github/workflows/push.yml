@@ -36,6 +36,12 @@ jobs:
 
     - name: cdx
       run: ls
+
+    - name: cd2
+      run: cd ViewPodPlugin
+
+    - name: cdx2
+      run: ls
       
     - name: Tests
       run: cf login -a https://api.cf.us10-001.hana.ondemand.com -u mevlutcan.maden@solviads.com -p M.maden37
