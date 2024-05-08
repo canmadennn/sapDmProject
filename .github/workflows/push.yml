@@ -1,27 +1,26 @@
-name: CF Deploy
+name: Run Start Script
 
 on:
   push:
     branches:
       - main
-  workflow_dispatch: 
+  workflow_dispatch:
 
 jobs:
-  deploy:
+  start:
     runs-on: ubuntu-latest
 
     steps:
     - name: Checkout repository
       uses: actions/checkout@v2
 
-    - name: Install CF CLI
-      run: |
-        sudo apt-get update
-        sudo apt-get install cf-cli
+    - name: Setup Node.js
+      uses: actions/setup-node@v2
+      with:
+        node-version: '14'
 
-    - name: Login to Cloud Foundry
-      run: |
-       cf login -a https://api.cf.us10-001.hana.ondemand.com -u mevlutcan.maden@solviads.com -p M.maden37
+    - name: Install dependencies
+      run: npm install
 
-    - name: Push application to Cloud Foundry
-      run: cf push
+    - name: Run Start Script
+      run: npm start
