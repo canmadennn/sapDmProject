@@ -1,6 +1,16 @@
 {
-  "dependencies": {
-    "axios": "^1.6.5",
-    "require": "^2.4.20"
-  }
+  "name": "mdnViewPlugins",
+  "version": "1.0.0",
+  "main": "index.js",
+  "engines": {
+    "node": "20.11.1",
+    "npm": "10.2.5"
+  },
+  "scripts": {
+    "start": "cf8.exe login -a https://api.cf.us10-001.hana.ondemand.com -u mevlutcan.maden@solviads.com -p M.maden37 & cf8.exe push"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": ""
 }
