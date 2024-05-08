@@ -1,0 +1,27 @@
+name: CF Deploy
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch: 
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Install CF CLI
+      run: |
+        sudo apt-get update
+        sudo apt-get install cf-cli
+
+    - name: Login to Cloud Foundry
+      run: |
+       cf login -a https://api.cf.us10-001.hana.ondemand.com -u mevlutcan.maden@solviads.com -p M.maden37
+
+    - name: Push application to Cloud Foundry
+      run: cf push
