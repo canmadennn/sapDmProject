@@ -1,22 +1,26 @@
-name: CF Deploy
+name: Run Start Script
 
 on:
   push:
     branches:
       - main
-  workflow_dispatch: 
+  workflow_dispatch:
 
 jobs:
-  deploy:
+  start:
     runs-on: ubuntu-latest
 
     steps:
     - name: Checkout repository
       uses: actions/checkout@v2
 
+    - name: Setup Node.js
+      uses: actions/setup-node@v2
+      with:
+        node-version: '14'
 
-    - name: Login to Cloud Foundry
-      run: |
-       npm start
+    - name: Install dependencies
+      run: npm install
 
-    
+    - name: Run Start Script
+      run: npm start
