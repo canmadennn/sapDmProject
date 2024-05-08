@@ -21,10 +21,14 @@ jobs:
 
     - name: Install dependencies
       run: npm install
-      
+
+    - name: Install CF CLI
+      run: |
+        sudo apt-get update
+        sudo apt-get install cf-cli
      
     - name: cd
       run: cd ViewPodPlugin
     
     - name: Run Start Script
-      run: npm start
+      run: cf push
