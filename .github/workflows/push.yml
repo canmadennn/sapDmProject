@@ -14,16 +14,14 @@ jobs:
     - name: Checkout repository
       uses: actions/checkout@v2
 
-    - name: Set up CF CLI
-      uses: cloudfoundry/github-actions/setup-cf@v1
-      with:
-        api-url: https://api.cf.us10-001.hana.ondemand.com
-        username: mevlutcan.maden@solviads.com
-        password: M.maden37
+    - name: Install CF CLI
+      run: |
+        sudo apt-get update
+        sudo apt-get install cf-cli
 
     - name: Login to Cloud Foundry
       run: |
-        cf login
+       cf login -a https://api.cf.us10-001.hana.ondemand.com -u mevlutcan.maden@solviads.com -p M.maden37
 
     - name: Push application to Cloud Foundry
       run: cf push
